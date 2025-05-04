@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
+
+  <body>
+<!-- SVG Wave Divider (Gelombang ke Kanan) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display: block; transform: scaleX(-1);">
+  <path fill="#f5f5f5" fill-opacity="1" d="M0,224L60,208C120,192,240,160,360,160C480,160,600,192,720,186.7C840,181,960,139,1080,117.3C1200,96,1320,96,1380,96L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+</svg>
+
+
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="logo">R A Z I E F</a>
+        <div class="menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+                <a href="#certificate" class="nav__link">
+                  <i class="uil uil-briefcase-alt nav__icon"></i>Certificate
+                </a>
+              </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact-Me
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__btns">
+
+          <div class="toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="home">
+      <div class="home__content container">
+        <div class="home__text">
+          <h1>Hi, <span id="dynamic-text"></span></h1>
+          <p>Welcome to my portfolio website. Here you will find information about me, my projects, and my contact details.</p>
+          <a href="#contact" class="btn">Contact Me</a>
+        </div>
+        <div class="home__image">
+          <img src="Foto.jpg" alt="Razief Image" />
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="about" class="about">
+      <div class="about__container container">
+        <div class="about__image">
+          <img src="perahu.jpeg" alt="About Me Image" />
+        </div>
+        <div class="about__content">
+          <h2 class="about__title">About Me</h2>
+          <p class="about__description">
+            Hi, I'm Razief, a passionate backend developer with a love for creating efficient and scalable systems. I enjoy solving complex problems and continuously learning new technologies to improve my skills.
+          </p>
+          <p class="about__tekss">
+            "I have experience in various programming languages and frameworks."
+          </p>
+          <div class="home__socials">
+            <a href="https://www.instagram.com/elrey_zif/" target="_blank">
+              <i class="uil uil-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-razief-biladul-jamal-tajudin-8922452a5/" target="_blank">
+              <i class="uil uil-linkedin"></i>
+            </a>
+            <a href="https://github.com/MuhammadRazief" target="_blank">
+              <i class="uil uil-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+
+    <section id="projects" class="projects">
+      <div class="projects__container container">
+        <h2 class="section__title">My Projects</h2>
+        <div class="projects__grid">
+          <div class="project__card">
+            <img src="bengkel.jpg" alt="Project 1" class="project__img">
+            <h3 class="project__title">Online Garage Shop</h3>
+            <p class="project__description">
+              A website for buying and selling workshop products with a simple interface and secure transactions.
+            </p>
+          
+            <!-- Teknologi yang digunakan -->
+            <div class="tech-stack">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          
+            <a href="https://bengkel-kami.netlify.app/" target="_blank" class="project__link">View Project</a>
+          </div>
+          
+          <div class="project__card">
+            <img src="growto.jpg" alt="Project 2" class="project__img">
+            <h3 class="project__title">Website For Growtopia</h3>
+            <p class="project__description">This website is created to introduce the Growtopia private server and how to play.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <a href="https://buron-ps.netlify.app/" target="_blank" class="project__link">View Project</a>
+            
+          </div>
+    
+          <div class="project__card">
+            <img src="kair.jpg" alt="Project 3" class="project__img">
+            <h3 class="project__title">Cashier App</h3>
+            <p class="project__description"> A website application for managing sales, inventory product, and real-time reports.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">PostgreSql</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+            <a href="https://github.com/MuhammadRazief/belajar" target="_blank" class="project__link">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="certificate" class="certificate">
+      <div class="certificate__container container">
+        <h2 class="section__title">My Certificate</h2>
+        <div class="certificate__grid">
+          <div class="certificate__card">
+            <img src="intro.jpg" alt="Project 1" class="certificate__img">
+            <h3 class="project__title">Data Science With Python</h3>
+            <p class="project__description">Certificate Introduction to Data Science With Python.</p>
+            <!-- <a href="https://github.com/yourusername/inventory-system" target="_blank" class="project__link">View Project</a> -->
+          </div>
+    
+          <div class="certificate__card">
+            <img src="Sertifikat PKL Razief.jpg" alt="Project 2" class="certificate__img">
+            <h3 class="project__title">PT Surya Manggala Informatika</h3>
+            <p class="project__description">Certificate of Internship Completion.</p>
+            <!-- <a href="https://github.com/yourusername/attendance-app" target="_blank" class="project__link">View Project</a> -->
+          </div>
+    
+          <div class="certificate__card">
+            <img src="Certificate_flask_page-0001.jpg" alt="Project 3" class="certificate__img">
+            <h3 class="project__title">Learning Flask</h3>
+            <p class="project__description">Certificate to create application using flask.</p>
+            <!-- <a href="https://github.com/yourusername/portfolio" target="_blank" class="project__link">View Project</a> -->
+          </div>
+          <div class="certificate__card">
+            <img src="Certificate_api_page-0001.jpg" alt="Project 3" class="certificate__img">
+            <h3 class="project__title">API Introduction</h3>
+            <p class="project__description">Certificate for completion of the Introduction to API course and its basic use.</p>
+            <!-- <a href="https://github.com/yourusername/portfolio" target="_blank" class="project__link">View Project</a> -->
+          </div>
+          <div class="certificate__card">
+            <img src="perahu.jpeg" alt="Project 3" class="certificate__img">
+            <h3 class="project__title">Portfolio Website</h3>
+            <p class="project__description">This responsive and interactive portfolio built with HTML, CSS, and JavaScript.</p>
+            <!-- <a href="https://github.com/yourusername/portfolio" target="_blank" class="project__link">View Project</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- contact.html -->
+<section id="contact">
+  <h2 class="section__title">Contact</h2>
+  <div class="contact-container">
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+</section>
+
+
+    
+
+    
+    
+
+    <!-- Footer Section -->
+    <section id="footer" class="footer">
+      <div class="footer__content container">
+        <p class="footer__text">
+          <span>@</span>
+          <span> </span>
+          <span>R</span>
+          <span>e</span>
+          <span>s</span>
+          <span>e</span>
+          <span>r</span>
+          <span>v</span>
+          <span>e</span>
+          <span>d</span>
+          <span> </span>
+          <span> </span>
+          <span>2</span>
+          <span>0</span>
+          <span>2</span>
+          <span>5</span>
+        </p>
+      </div>
+    </section>
+    
+
+
+    <script src="Script.js"></script>
+  </body>
+</html>

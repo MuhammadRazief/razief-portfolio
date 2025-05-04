@@ -1,0 +1,781 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.938rem;
+  background-color: hsl(240, 60%, 99%);
+  color: hsl(240, 8%, 45%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(240, 8%, 15%);
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 768px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*================= Header ===============*/
+/* Tambahkan animasi untuk navbar */
+.header {
+    width: 100%;
+    position: fixed;
+    top: -100px; /* Awalnya tersembunyi di atas */
+    left: 0;
+    z-index: 1000;
+    background-color: transparent; /* Awalnya transparan */
+    transition: top 0.5s ease, background-color 0.5s ease;
+    animation: slideDown 1s ease forwards; /* Animasi muncul */
+  }
+  
+  /* Animasi slide down */
+  @keyframes slideDown {
+    from {
+      top: -100px; /* Navbar tersembunyi */
+    }
+    to {
+      top: 0; /* Navbar muncul */
+    }
+  }
+
+.nav {
+  max-width: 968px;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+}
+
+.logo {
+    color: hsl(0, 0%, 0%);
+    font-weight: 500;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+    transition: color 0.3s ease; /* Tambahkan transisi untuk efek halus */
+  }
+  
+  .logo:hover {
+    color: hsl(240, 69%, 61%); /* Warna saat hover */
+  }
+.toggle {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: hsl(240, 69%, 61%);
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.3s;
+  }
+}
+
+.nav__list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.813rem;
+  color: hsl(0, 0%, 0%); /* Warna gelap */
+  font-weight: 500;
+  opacity: 0; /* Awalnya tidak terlihat */
+  transform: translateY(-20px); /* Awalnya sedikit bergeser ke atas */
+  animation: fadeInLinks 0.5s ease forwards; /* Animasi muncul */
+}
+
+
+/* Tambahkan delay untuk setiap link */
+.nav__list .nav__item:nth-child(1) .nav__link {
+    animation-delay: 0.2s;
+  }
+  
+  .nav__list .nav__item:nth-child(2) .nav__link {
+    animation-delay: 0.4s;
+  }
+  
+  .nav__list .nav__item:nth-child(3) .nav__link {
+    animation-delay: 0.6s;
+  }
+  
+  .nav__list .nav__item:nth-child(4) .nav__link {
+    animation-delay: 0.8s;
+  }
+
+  .nav__list .nav__item:nth-child(5) .nav__link {
+    animation-delay: 1s;
+  }
+  
+/* Animasi untuk link navbar */
+@keyframes fadeInLinks {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.nav__link:hover {
+  color: hsl(0, 64%, 44%);
+}
+
+.nav__icon {
+  font-size: 1.2rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: hsl(0, 0%, 0%);
+}
+
+.nav__close:hover {
+  color: hsl(0, 64%, 44%);
+}
+
+/* Show Menu */
+.show-menu {
+  bottom: 0;
+}
+
+/* Active Link */
+.active-link {
+  color: hsl(240, 69%, 61%);
+}
+
+/* Change Background header */
+.scroll-header {
+    background-color: hsl(240, 60%, 99%); /* Warna solid saat scroll */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .scroll-header .nav__link {
+    color: hsl(240, 8%, 15%); /* Warna gelap */
+  }
+  
+  .scroll-header .logo {
+    color: hsl(240, 8%, 15%); /* Warna gelap */
+  }
+  .scroll-header .toggle {
+    color: hsl(240, 8%, 15%); /* Warna gelap */
+  }
+  
+  .scroll-header .nav__link:hover {
+    color: hsl(240, 69%, 61%);
+  }
+  
+
+/*======================== Media Queries ======================*/
+
+/* For Small Devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .menu {
+    padding: 2rem 0.25rem 4rem;
+  }
+
+  .nav__list {
+    column-gap: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .header {
+    top: 0;
+    bottom: initial;
+  }
+
+  .header,
+  .main,
+  .footer__container {
+    padding: 0 1rem;
+  }
+
+  .nav {
+    height: calc(3rem + 1.5rem);
+    column-gap: 1rem;
+  }
+
+  .nav__icon,
+  .nav__close,
+  .toggle {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 2rem;
+  }
+
+  .menu {
+    margin-left: auto;
+  }
+
+  .change-theme {
+    margin: 0;
+  }
+}
+
+
+
+/* Home Section */
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh;
+    padding: 2rem 0; */
+    margin-top: -80px;
+    background-color: hsl(240, 60%, 99%);
+  }
+  .home__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .home__text {
+    max-width: 500px;
+    margin-left: -100px;
+  }
+
+  .home__text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .home__text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .home__text .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .home__text .btn:hover {
+    background-color: #555;
+  }
+
+  .home__image img {
+    max-width: 80%;
+    margin-left: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Social Media Icons */
+  .home__socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    /* margin-left: 20px; */
+    /* flex-direction: column; */
+  }
+
+  .home__socials a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+
+  .home__socials a:hover {
+    color: #555;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .home__content {
+      flex-direction: column-reverse;
+    }
+
+    .home__text  {
+      /* text-align: left; */
+      margin-left: 0;
+    }
+    .home__text h1 {
+      font-size: 28px;
+    }
+
+    .home__text p {
+      font-size: 16px;
+      
+    }
+
+    .home__image {
+      margin-top: 80px;
+      margin-bottom: 40px;
+      max-width: 80%;
+    }
+
+    .home__image img {
+      max-width: 100%;
+      margin-left: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .home__socials {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .home__text h1 {
+      font-size: 24px;
+    }
+    .home__image {
+      margin-top: 80px;
+      margin-bottom: 40px;
+      max-width: 80%;
+      margin-left: auto;   /* tambahkan ini */
+      margin-right: auto;  /* dan ini untuk center */
+    }
+
+    .home__text p {
+      font-size: 14px;
+    }
+
+    .home__text .btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+
+/* About Section */
+.about {
+  padding: 4rem 0;
+  background-color: hsl(240, 60%, 99%);
+}
+
+.about__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.about__tekss {
+  font-style: italic;
+}
+
+.about__image img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-left: -50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about__content {
+  max-width: 500px;
+}
+
+.about__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: hsl(240, 8%, 15%);
+}
+
+.about__description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: hsl(240, 8%, 45%);
+  line-height: 1.6;
+}
+
+.about .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: hsl(240, 69%, 61%);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.about .btn:hover {
+  background-color: hsl(240, 57%, 53%);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .about__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about__image {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 1.5rem;
+    
+  }
+
+  .about__description {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .about .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  .about__image{
+    margin-left: 50px;
+  }
+}
+
+
+.projects__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.projects {
+  padding: 4rem 0;
+  background-color: hsl(240, 60%, 99%);
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+
+.tech-stack {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 0 15px;
+  margin-bottom: 10px;
+}
+
+.tech-tag {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project__card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project__card:hover {
+  transform: translateY(-8px);
+}
+
+.project__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project__title {
+  font-size: 1.4rem;
+  margin: 1rem;
+  color: #111;
+}
+
+.project__description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+.project__link {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  color: #0077ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.project__link:hover {
+  text-decoration: underline;
+}
+
+/* Projects Section */
+.certificate__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.certificate {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.certificate__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.certificate__card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.certificate__card:hover {
+  transform: translateY(-8px);
+}
+
+.certificate__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project__title {
+  font-size: 1.4rem;
+  margin: 1rem;
+  color: #111;
+}
+
+.project__description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+.project__link {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  color: #0077ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.project__link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* contact.css */
+#contact {
+  background: #f4f4f4;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-container button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-container button:hover {
+  background-color: #2980b9;
+}
+
+
+
+
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  padding: 30px 0;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Pastikan elemen tidak overflow saat animasi */
+}
+
+/* Awalnya huruf disembunyikan */
+.footer__text span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(10px); /* Agar ada efek muncul dari bawah */
+  transition: opacity 0.3s, transform 0.3s; /* Tambahkan transisi */
+}
+
+/* Kelas untuk menampilkan animasi ketika footer terlihat */
+.footer__text--visible span {
+  animation: revealText 0.5s forwards;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menambahkan delay pada setiap huruf */
+.footer__text--visible span:nth-child(1) { animation-delay: 0s; }
+.footer__text--visible span:nth-child(2) { animation-delay: 0.1s; }
+.footer__text--visible span:nth-child(3) { animation-delay: 0.2s; }
+.footer__text--visible span:nth-child(4) { animation-delay: 0.3s; }
+.footer__text--visible span:nth-child(5) { animation-delay: 0.4s; }
+.footer__text--visible span:nth-child(6) { animation-delay: 0.5s; }
+.footer__text--visible span:nth-child(7) { animation-delay: 0.6s; }
+.footer__text--visible span:nth-child(8) { animation-delay: 0.7s; }
+.footer__text--visible span:nth-child(9) { animation-delay: 0.8s; }
+.footer__text--visible span:nth-child(10) { animation-delay: 0.9s; }
+.footer__text--visible span:nth-child(11) { animation-delay: 1s; }
+.footer__text--visible span:nth-child(12) { animation-delay: 1.1s; }
+.footer__text--visible span:nth-child(13) { animation-delay: 1.1s; }
+.footer__text--visible span:nth-child(14) { animation-delay: 1.1s; }
+.footer__text--visible span:nth-child(15) { animation-delay: 1.1s; }
+.footer__text--visible span:nth-child(16) { animation-delay: 1.1s; }
+
