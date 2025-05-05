@@ -108,6 +108,14 @@ img {
   color: hsl(240, 69%, 61%);
 }
 
+#home,
+#about,
+#projects,
+#certificate,
+#contact {
+  scroll-margin-top: 80px; /* Sesuaikan dengan tinggi header */
+}
+
 @media screen and (max-width: 767px) {
   .menu {
     position: fixed;
@@ -426,6 +434,15 @@ img {
     .home__text .btn {
       padding: 10px 20px;
       font-size: 14px;
+    }
+  }
+  @media (max-width: 480px) {
+    #home,
+    #about,
+    #projects,
+    #certificate,
+    #contact {
+      scroll-margin-top: 10px; /* Sesuaikan dengan tinggi header */
     }
   }
 
